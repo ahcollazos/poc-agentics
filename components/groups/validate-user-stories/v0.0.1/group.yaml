@@ -1,0 +1,9 @@
+group:
+  name: validate-user-stories
+  version: v0.0.1
+  goal_ref: validate-user-stories@v0.0.1
+  squads:
+    - squad_ref: validate-user-stories@v0.0.1
+  description: Validates user stories against Definition of Ready criteria and business requirements using a specialized validation squad
+  max_rounds: 30
+  enable_memory: false

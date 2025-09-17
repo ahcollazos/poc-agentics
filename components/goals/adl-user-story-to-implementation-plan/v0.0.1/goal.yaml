@@ -1,0 +1,144 @@
+goal:
+  name: adl-user-story-to-implementation-plan
+  version: v0.0.1
+  description: "Generates detailed implementation plans from user stories following Node.js and ADL best practices"
+  variables:
+    - name: user_story_content
+      type: rule_file
+      description: "Content of the user story to be analyzed and implemented"
+    - name: nodejs_guidelines_content
+      type: rule_file
+      description: "Node.js development guidelines and best practices"
+    - name: nodejs_manual_content
+      type: rule_file
+      description: "Node.js technical manual and reference documentation"
+    - name: code_quality_content
+      type: rule_file
+      description: "Code quality standards and requirements"
+    - name: implementation_guide_content
+      type: rule_file
+      description: "Implementation patterns and architectural guidelines"
+    - name: package_template_content
+      type: rule_file
+      description: "Standard package structure and configuration templates"
+    - name: project_structure_content
+      type: rule_file
+      description: "Project organization and directory structure guidelines"
+    - name: entry_point_patterns_content
+      type: rule_file
+      description: "Entry point patterns and application initialization"
+    - name: domain_models_content
+      type: rule_file
+      description: "Domain models, validations, and schemas definitions"
+    - name: documentation_templates_content
+      type: rule_file
+      description: "Documentation templates and standards"
+    - name: lib_e2e_cypher_content
+      type: rule_file
+      description: "E2E testing library and cypher utilities"
+    - name: lib_node_pp_parameter_store_content
+      type: rule_file
+      description: "Parameter store library and configuration management"
+    - name: output_path
+      type: file
+      description: "Path where the generated implementation plan will be saved"
+  startpoint: |
+    The 'planner' must analyze the user story and the context documents to generate a detailed implementation plan following Node.js and ADL architectural patterns.
+  objective: |
+    ## CONTEXT ANALYSIS & IMPLEMENTATION PLANNING
+
+    You are an expert Node.js architect specializing in ADL (Application Development Layer) patterns. Your task is to analyze the provided user story and generate a comprehensive, actionable implementation plan.
+
+    ### User Story Requirements
+    ```markdown
+    {{user_story_content}}
+    ```
+
+    ### Technical Guidelines & Context
+    
+    #### Node.js Development Standards
+    ```markdown
+    {{nodejs_guidelines_content}}
+    ```
+
+    #### Technical Reference Manual
+    ```markdown
+    {{nodejs_manual_content}}
+    ```
+
+    #### Code Quality Standards
+    ```markdown
+    {{code_quality_content}}
+    ```
+    
+    #### Implementation Architecture
+    ```markdown
+    {{implementation_guide_content}}
+    ```
+
+    #### Package Templates & Structure
+    ```markdown
+    {{package_template_content}}
+    ```
+    
+    #### Project Organization
+    ```markdown
+    {{project_structure_content}}
+    ```
+
+    #### Entry Point Patterns
+    ```markdown
+    {{entry_point_patterns_content}}
+    ```
+
+    #### Domain Models & Validations
+    ```markdown
+    {{domain_models_content}}
+    ```
+
+    #### Documentation Standards
+    ```markdown
+    {{documentation_templates_content}}
+    ```
+    
+    ### Lib E2E Cypher
+    ```markdown
+    {{lib_e2e_cypher_content}}
+    ```
+
+    #### Parameter Store Management
+    ```markdown
+    {{lib_node_pp_parameter_store_content}}
+    ```
+
+    ## IMPLEMENTATION OBJECTIVES
+
+    ### Primary Goal
+    Generate a detailed, step-by-step implementation plan that enables GitHub Copilot to create production-ready Node.js code following ADL patterns and best practices.
+
+    ### Key Requirements
+    1. **Architecture Compliance**: Follow ADL domain-driven design patterns
+    2. **Validation Standards**: Implement mandatory header and body validation using Joi schemas
+    3. **Error Handling**: Include proper error handling with ValidationError patterns
+    4. **Testing Strategy**: Define unit and integration testing approaches
+    5. **Documentation**: Specify documentation requirements and templates
+    6. **Security**: Address authentication, authorization, and data validation
+    7. **Performance**: Consider scalability and optimization requirements
+
+    ### Output Specifications
+    - **Format**: Markdown with clear sections and subsections
+    - **Structure**: Logical progression from architecture to implementation details
+    - **Actionability**: Each step must be implementable by developers
+    - **Completeness**: Cover all aspects from setup to deployment
+    - **Traceability**: Link requirements back to user story elements
+
+    ### Save Location
+    Save the generated implementation plan to: `{{output_path}}`
+
+    **CRITICAL SUCCESS CRITERIA:**
+    - Plan addresses all user story requirements
+    - Follows Node.js and ADL architectural patterns
+    - Includes validation, error handling, and testing strategies
+    - Provides clear, actionable implementation steps
+    - File is successfully saved to the specified output path
+  max_rounds: 10

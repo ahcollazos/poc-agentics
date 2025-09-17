@@ -1,0 +1,7 @@
+group:
+  name: angular-code-plan
+  version: v0.0.1
+  goal_ref: angular-code-plan@v0.0.1
+  squads:
+    - squad_ref: angular-code-plan@v0.0.1
+

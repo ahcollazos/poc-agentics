@@ -1,0 +1,201 @@
+flow:
+  name: adl-user-story-to-implementation-plan
+  version: v0.0.1
+  variables:
+    - name: user_story_path
+      type: file
+    - name: output_path
+      type: string
+
+  stages:
+    # 1. Read all necessary files
+    - name: read_user_story
+      target_name: get_file_content
+      target_type: transformer
+      target_version: v0.0.1
+      input_values:
+        - file_path_ref: user_story_path
+        - destination: user_story_content       
+    # 2. Read context files: guidelines, manuals, quality standards, etc.
+    - name: read_nodejs_guidelines
+      target_name: get_file_content
+      target_type: transformer
+      target_version: v0.0.1
+      input_values:
+        - file_path: /source_code_files/context-engineering-adl/guidelines-node/nodejs-guidelines.md
+        - destination: nodejs_guidelines_content
+    - name: read_nodejs_manual
+      target_name: get_file_content
+      target_type: transformer
+      target_version: v0.0.1
+      input_values:
+        - file_path: /source_code_files/context-engineering-adl/guidelines-node/nodejs-manual.md
+        - destination: nodejs_manual_content
+    - name: read_code_quality
+      target_name: get_file_content
+      target_type: transformer
+      target_version: v0.0.1
+      input_values:
+        - file_path: /source_code_files/context-engineering-adl/calidad-codigo/calidad-codigo.md
+        - destination: code_quality_content
+    - name: read_pdr_implementation_guide
+      target_name: get_file_content
+      target_type: transformer
+      target_version: v0.0.1
+      input_values:
+        - file_path: /source_code_files/context-engineering-adl/pdr-maker-lambdas/input/00-implementation-guide.md
+        - destination: implementation_guide_content
+    - name: read_pdr_package-template
+      target_name: get_file_content
+      target_type: transformer
+      target_version: v0.0.1
+      input_values:
+        - file_path: /source_code_files/context-engineering-adl/pdr-maker-lambdas/input/01-package-template.md
+        - destination: package_template_content
+    - name: read_pdr_project-structure
+      target_name: get_file_content
+      target_type: transformer
+      target_version: v0.0.1
+      input_values:
+        - file_path: /source_code_files/context-engineering-adl/pdr-maker-lambdas/input/02-project-structure.md
+        - destination: project_structure_content
+    - name: read_entry_point_patterns
+      target_name: get_file_content
+      target_type: transformer
+      target_version: v0.0.1
+      input_values:
+        - file_path: /source_code_files/context-engineering-adl/pdr-maker-lambdas/input/03-entry-point-patterns.md
+        - destination: entry_point_patterns_content
+    - name: read_domain_models
+      target_name: get_file_content
+      target_type: transformer
+      target_version: v0.0.1
+      input_values:
+        - file_path: /source_code_files/context-engineering-adl/pdr-maker-lambdas/input/04-domain-models.md
+        - destination: domain_models_content
+    - name: read_documentation_templates
+      target_name: get_file_content
+      target_type: transformer
+      target_version: v0.0.1
+      input_values:
+        - file_path: /source_code_files/context-engineering-adl/pdr-maker-lambdas/input/06-documentation-templates.md
+        - destination: documentation_templates_content
+    # 3. Read library documentation that could be useful for the implementation
+    - name: read_lib_e2e_cypher
+      target_name: get_file_content
+      target_type: transformer
+      target_version: v0.0.1
+      input_values:
+        - file_path: /source_code_files/context-engineering-adl/libs/adl-commons-lib-e2e-cypher-context.md
+        - destination: lib_e2e_cypher_content
+    - name: read_lib_node_pp_parameter_store
+      target_name: get_file_content
+      target_type: transformer
+      target_version: v0.0.1
+      input_values:
+        - file_path: /source_code_files/context-engineering-adl/libs/adl-commons-lib-node-pp-parameter-store.md
+        - destination: lib_node_pp_parameter_store_content
+    # Escape content for Angular templates
+    - name: escape_nodejs_guidelines
+      target_type: transformer
+      target_name: escape_angular_template
+      target_version: v0.0.1
+      input_values:
+        - input_ref: nodejs_guidelines_content
+        - output_ref: nodejs_guidelines_content
+    - name: escape_nodejs_manual
+      target_type: transformer
+      target_name: escape_angular_template
+      target_version: v0.0.1
+      input_values:
+        - input_ref: nodejs_manual_content
+        - output_ref: nodejs_manual_content
+    - name: escape_code_quality
+      target_type: transformer
+      target_name: escape_angular_template
+      target_version: v0.0.1
+      input_values:
+        - input_ref: code_quality_content
+        - output_ref: code_quality_content
+    - name: escape_user_story
+      target_type: transformer
+      target_name: escape_angular_template
+      target_version: v0.0.1
+      input_values:
+        - input_ref: user_story_content
+        - output_ref: user_story_content
+    - name: escape_implementation_guide
+      target_type: transformer
+      target_name: escape_angular_template
+      target_version: v0.0.1
+      input_values:
+        - input_ref: implementation_guide_content
+        - output_ref: implementation_guide_content
+    - name: escape_package_template
+      target_type: transformer
+      target_name: escape_angular_template
+      target_version: v0.0.1
+      input_values:
+        - input_ref: package_template_content
+        - output_ref: package_template_content
+    - name: escape_project_structure
+      target_type: transformer
+      target_name: escape_angular_template
+      target_version: v0.0.1
+      input_values:
+        - input_ref: project_structure_content
+        - output_ref: project_structure_content
+    - name: escape_entry_point_patterns
+      target_type: transformer
+      target_name: escape_angular_template
+      target_version: v0.0.1
+      input_values:
+        - input_ref: entry_point_patterns_content
+        - output_ref: entry_point_patterns_content
+    - name: escape_domain_models
+      target_type: transformer
+      target_name: escape_angular_template
+      target_version: v0.0.1
+      input_values:
+        - input_ref: domain_models_content
+        - output_ref: domain_models_content
+    - name: escape_documentation_templates
+      target_type: transformer
+      target_name: escape_angular_template
+      target_version: v0.0.1
+      input_values:
+        - input_ref: documentation_templates_content
+        - output_ref: documentation_templates_content
+    - name: escape_lib_e2e_cypher
+      target_type: transformer
+      target_name: escape_angular_template
+      target_version: v0.0.1
+      input_values:
+        - input_ref: lib_e2e_cypher_content
+        - output_ref: lib_e2e_cypher_content
+    - name: escape_lib_node_pp_parameter_store
+      target_type: transformer
+      target_name: escape_angular_template
+      target_version: v0.0.1
+      input_values:
+        - input_ref: lib_node_pp_parameter_store_content
+        - output_ref: lib_node_pp_parameter_store_content
+    # Main group stage
+    - name: hu-to-implementation-plan
+      target_type: group
+      target_name: adl-user-story-to-implementation-plan
+      target_version: v0.0.1
+      input_values:
+        - user_story_content
+        - nodejs_guidelines_content
+        - nodejs_manual_content
+        - code_quality_content
+        - implementation_guide_content
+        - package_template_content
+        - project_structure_content
+        - entry_point_patterns_content
+        - domain_models_content
+        - documentation_templates_content
+        - lib_e2e_cypher_content
+        - lib_node_pp_parameter_store_content
+        - output_path

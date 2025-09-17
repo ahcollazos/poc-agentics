@@ -1,0 +1,47 @@
+flow:
+  name: validate-user-stories
+  version: v0.0.1
+  variables:
+    - name: user_story_path
+      type: string
+    - name: business_requirements_path
+      type: string
+    - name: definition_of_ready_path
+      type: string
+    - name: output_path
+      type: string
+  stages:
+    - name: read_user_story
+      target_name: get_file_content
+      target_type: transformer
+      target_version: v0.0.1
+      input_values:
+        - file_path_ref: user_story_path
+        - destination: user_story
+      comment: Read the user story content from the specified file path
+    - name: read_business_requirements
+      target_name: get_file_content
+      target_type: transformer
+      target_version: v0.0.1
+      input_values:
+        - file_path_ref: business_requirements_path
+        - destination: business_requirements
+      comment: Read the business requirements document content
+    - name: read_definition_of_ready
+      target_name: get_file_content
+      target_type: transformer
+      target_version: v0.0.1
+      input_values:
+        - file_path_ref: definition_of_ready_path
+        - destination: definition_of_ready_content
+      comment: Read the definition of ready criteria document
+    - name: validate_user_stories
+      target_type: group
+      target_name: validate-user-stories
+      target_version: v0.0.1
+      input_values:
+        - user_story
+        - business_requirements
+        - definition_of_ready_content
+        - output_path
+      comment: Execute validation of the user story against INVEST criteria and business requirements

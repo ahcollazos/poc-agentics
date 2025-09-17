@@ -1,0 +1,184 @@
+[
+  {
+    "name": "angular-guidelines.md",
+    "description": "Angular guidelines",
+    "file": "1-context-engineering/input/angular-guidelines.md",
+    "mime_type": "text/markdown",
+    "rag": false,
+    "dest_dir": "/source_code_files/1-context-engineering/input"
+  },
+  {
+    "name": "angular-manual.md",
+    "description": "Angular manual",
+    "file": "1-context-engineering/input/angular-manual.md",
+    "mime_type": "text/markdown",
+    "rag": true,
+    "dest_dir": "/source_code_files/1-context-engineering/input"
+  },
+  {
+    "name": "prd.md",
+    "description": "Product requirements document",
+    "file": "1-context-engineering/input/prd.md",
+    "mime_type": "text/markdown",
+    "rag": false,
+    "dest_dir": "/source_code_files/1-context-engineering/input"
+  },
+  {
+    "name": "user-story.md",
+    "description": "Sample User story document",
+    "file": "1-context-engineering/input/user-story.md",
+    "mime_type": "text/markdown",
+    "rag": false,
+    "dest_dir": "/source_code_files/1-context-engineering/input"
+  },
+  {
+    "name": "definition-of-ready.md",
+    "description": "Definition of Ready",
+    "file": "1-context-engineering/input/definition-of-ready.md",
+    "mime_type": "text/markdown",
+    "rag": false,
+    "dest_dir": "/source_code_files/1-context-engineering/input"
+  },
+  {
+    "name": "ui-design-specs.md",
+    "description": "UI design specifications",
+    "file": "1-context-engineering/input/ui-design-specs.md",
+    "mime_type": "text/markdown",
+    "rag": false,
+    "dest_dir": "/source_code_files/1-context-engineering/input"
+  },
+  {
+    "name": "001-course-creation.png",
+    "description": "Figma layout for course creation template app",
+    "file": "1-figma-to-user-story/input/001-course-creation.png",
+    "mime_type": "image/png",
+    "rag": false,
+    "dest_dir": "/source_code_files/1-figma-to-user-story/input"
+  },
+  {
+    "name": "PA-1411.md",
+    "description": "Historia de usuario de ejemplo para generación de plan de implementación Node.js",
+    "file": "adl-user-story-to-implementation-plan/input/PA-1411.md",
+    "mime_type": "text/markdown",
+    "rag": false,
+    "dest_dir": "/source_code_files/adl-user-story-to-implementation-plan/input"
+  },
+  {
+    "name": "PA-1596.md",
+    "description": "Historia de usuario de ejemplo para generación de plan de implementación Node.js",
+    "file": "adl-user-story-to-implementation-plan/input/PA-1596.md",
+    "mime_type": "text/markdown",
+    "rag": false,
+    "dest_dir": "/source_code_files/adl-user-story-to-implementation-plan/input"
+  },
+  {
+    "name": "PA-1463.md",
+    "description": "Historia de usuario de ejemplo para generación de plan de implementación Node.js",
+    "file": "adl-user-story-to-implementation-plan/input/PA-1463.md",
+    "mime_type": "text/markdown",
+    "rag": false,
+    "dest_dir": "/source_code_files/adl-user-story-to-implementation-plan/input"
+  },
+  {
+    "name": "credit-cards-api-requirements.md",
+    "description": "Historia de usuario de ejemplo para generación de plan de implementación Node.js",
+    "file": "adl-user-story-to-implementation-plan/input/credit-cards-api-requirements.md",
+    "mime_type": "text/markdown",
+    "rag": false,
+    "dest_dir": "/source_code_files/adl-user-story-to-implementation-plan/input"
+  },
+  {
+    "name": "nodejs-guidelines.md",
+    "description": "Node.js coding guidelines",
+    "file": "context-engineering-adl/guidelines-node/nodejs-guidelines.md",
+    "mime_type": "text/markdown",
+    "rag": false,
+    "dest_dir": "/source_code_files/context-engineering-adl/guidelines-node"
+  },
+  {
+    "name": "nodejs-manual.md",
+    "description": "Node.js backend manual",
+    "file": "context-engineering-adl/guidelines-node/nodejs-manual.md",
+    "mime_type": "text/markdown",
+    "rag": false,
+    "dest_dir": "/source_code_files/context-engineering-adl/guidelines-node"
+  },
+  {
+    "name": "calidad-codigo.md",
+    "description": "Lineamientos de calidad de código",
+    "file": "context-engineering-adl/calidad-codigo/calidad-codigo.md",
+    "mime_type": "text/markdown",
+    "rag": false,
+    "dest_dir": "/source_code_files/context-engineering-adl/calidad-codigo"
+  },
+  {
+    "name": "00-implementation-guide.md",
+    "file": "context-engineering-adl/pdr-maker-lambdas/organized/00-implementation-guide.md",
+    "mime_type": "text/markdown",
+    "rag": false,
+    "dest_dir": "/source_code_files/context-engineering-adl/pdr-maker-lambdas/input"
+  },
+  {
+    "name": "01-package-template.md",
+    "file": "context-engineering-adl/pdr-maker-lambdas/organized/01-package-template.md",
+    "mime_type": "text/markdown",
+    "rag": false,
+    "dest_dir": "/source_code_files/context-engineering-adl/pdr-maker-lambdas/input"
+  },
+  {
+    "name": "02-project-structure.md",
+    "file": "context-engineering-adl/pdr-maker-lambdas/organized/02-project-structure.md",
+    "mime_type": "text/markdown",
+    "rag": false,
+    "dest_dir": "/source_code_files/context-engineering-adl/pdr-maker-lambdas/input"
+  },
+  {
+    "name": "03-entry-point-patterns.md",
+    "file": "context-engineering-adl/pdr-maker-lambdas/organized/03-entry-point-patterns.md",
+    "mime_type": "text/markdown",
+    "rag": false,
+    "dest_dir": "/source_code_files/context-engineering-adl/pdr-maker-lambdas/input"
+  },
+  {
+    "name": "04-domain-models.md",
+    "file": "context-engineering-adl/pdr-maker-lambdas/organized/04-domain-models.md",
+    "mime_type": "text/markdown",
+    "rag": false,
+    "dest_dir": "/source_code_files/context-engineering-adl/pdr-maker-lambdas/input"
+  },
+  {
+    "name": "06-documentation-templates.md",
+    "file": "context-engineering-adl/pdr-maker-lambdas/organized/06-documentation-templates.md",
+    "mime_type": "text/markdown",
+    "rag": false,
+    "dest_dir": "/source_code_files/context-engineering-adl/pdr-maker-lambdas/input"
+  },
+  {
+    "name": "adl-commons-lib-e2e-cypher-context.md",
+    "file": "context-engineering-adl/libs/adl-commons-lib-e2e-cypher-context.md",
+    "mime_type": "text/markdown",
+    "rag": false,
+    "dest_dir": "/source_code_files/context-engineering-adl/libs"
+  },
+  {
+    "name": "adl-commons-lib-node-pp-parameter-store.md",
+    "file": "context-engineering-adl/libs/adl-commons-lib-node-pp-parameter-store.md",
+    "mime_type": "text/markdown",
+    "rag": false,
+    "dest_dir": "/source_code_files/context-engineering-adl/libs"
+  },
+  {
+    "name": "adl-commons-lib-e2e-cypher-prompt-ejemplo.md",
+    "file": "context-engineering-adl/prompts/adl-commons-lib-e2e-cypher-prompt-ejemplo.md",
+    "mime_type": "text/markdown",
+    "rag": false,
+    "dest_dir": "/source_code_files/context-engineering-adl/prompts"
+  },
+  {
+    "name": "adl-commons-lib-node-pp-parameter-store-prompt-ejemplo.md",
+    "file": "context-engineering-adl/prompts/adl-commons-lib-node-pp-parameter-store-prompt-ejemplo.md",
+    "mime_type": "text/markdown",
+    "rag": false,
+    "dest_dir": "/source_code_files/context-engineering-adl/prompts"
+  }
+]

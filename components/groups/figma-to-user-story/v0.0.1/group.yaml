@@ -1,0 +1,6 @@
+group:
+  name: figma-to-user-story
+  version: v0.0.1
+  goal_ref: figma-to-user-story@v0.0.1
+  squads:
+    - squad_ref: figma-to-user-story@v0.0.1

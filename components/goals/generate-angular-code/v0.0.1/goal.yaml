@@ -1,0 +1,27 @@
+goal:
+  description: ''
+  display_name: Generate Angular Code
+  id: 23ac7c47-353b-4a48-8688-c3dfbbdbeacb
+  name: generate-angular-code
+  objective: |2-
+        **CONTEXT:**
+        ## Angular Code Implementation Plan, located in:
+        /source_code_files/2-angular-code-plan/output/angular-code-plan.md
+
+        Your objective is to exhaustively analyze the provided documentation and generate Angular code including all the requirements needed to implement the user journey and save the code to the output path using the `save_file` tool.
+
+        **IMPORTANT:**
+
+        - Save all the generated files to the output path: 3-generate-angular-code/output/
+
+        *Inputs:*
+        - `angular_code_plan`: The path to the Angular Code Implementation plan.
+
+        *Acceptance Criteria:*
+        - The generated Angular code must be placed in the correct directory within the application.
+        - The Angular code must strictly adhere to all provided design specifications.
+        - The Angular code must adhere to the directions stated in Angular Code Implementation Plan
+  startpoint: |-
+    Start by having the 'planner' come up with a plan to analyze the provided
+        documents and generate Angular code.
+  version: v0.0.1

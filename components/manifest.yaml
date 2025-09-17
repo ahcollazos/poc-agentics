@@ -1,0 +1,95 @@
+components:
+  manifest_version: "0.1"
+  metadata:
+    name: adl
+    version: v0.0.1
+    author: adl
+    description: adl
+    llm_configs:
+      - name: azure:gpt-4o
+        model_client: AzureOpenAIChatCompletionClient
+        configuration:
+          model: gpt-4o
+          api_key: "$(mck:ai-gw-api-key)"
+          api_version: 2025-04-01-preview
+          temperature: 0.2
+          azure_endpoint: https://azure.prod.ai-gateway.quantumblack.com/4cdf3203-85df-4e08-ab09-d02ce99ad96f
+          azure_deployment: gpt-4o
+          parallel_tool_calls: false
+      - name: anthropic:claude-4-sonnet
+        model_client: autogen_ext.models.anthropic.AnthropicChatCompletionClient
+        configuration:
+          model: claude-sonnet-4-20250514
+          api_key: "$(mck:ai-gw-api-key)"
+          base_url: https://anthropic.prod.ai-gateway.quantumblack.com/4cdf3203-85df-4e08-ab09-d02ce99ad96f
+          temperature: 0.2
+          model_info:
+            vision: true
+            function_calling: true
+            json_output: true
+            structured_output: false
+            multiple_system_messages: false
+            family: claude-4-sonnet
+      - name: azure:gpt-4.1-mini
+        model_client: AzureOpenAIChatCompletionClient
+        configuration:
+          model: gpt-4.1-mini
+          api_key: "$(mck:ai-gw-api-key)"
+          api_version: 2025-04-01-preview
+          temperature: 0.2
+          azure_endpoint: https://azure.prod.ai-gateway.quantumblack.com/4cdf3203-85df-4e08-ab09-d02ce99ad96f
+          azure_deployment: gpt-4.1-mini
+          parallel_tool_calls: false
+      - name: azure:gpt-4.1-nano
+        model_client: AzureOpenAIChatCompletionClient
+        configuration:
+          model: gpt-4.1-nano
+          api_key: "$(mck:ai-gw-api-key)"
+          api_version: 2025-04-01-preview
+          temperature: 0.2
+          azure_endpoint: https://azure.prod.ai-gateway.quantumblack.com/4cdf3203-85df-4e08-ab09-d02ce99ad96f
+          azure_deployment: gpt-4.1-nano
+          parallel_tool_calls: false
+      - name: azure:gpt-4.1
+        model_client: AzureOpenAIChatCompletionClient
+        configuration:
+          model: gpt-4.1
+          api_key: "$(mck:ai-gw-api-key)"
+          api_version: 2025-04-01-preview
+          temperature: 0.2
+          azure_endpoint: https://azure.prod.ai-gateway.quantumblack.com/4cdf3203-85df-4e08-ab09-d02ce99ad96f
+          azure_deployment: gpt-4.1
+          parallel_tool_calls: false
+      - name: openai:gpt-4o
+        model_client: OpenAIChatCompletionClient
+        configuration:
+          model: gpt-4o
+          api_key: "$(mck:ai-gw-api-key)"
+          base_url: https://openai.prod.ai-gateway.quantumblack.com/4cdf3203-85df-4e08-ab09-d02ce99ad96f/v1
+          temperature: 0.2
+          parallel_tool_calls: false
+      - name: openai:gpt-5-mini
+        model_client: OpenAIChatCompletionClient
+        configuration:
+          model: gpt-5-mini
+          api_key: "$(mck:ai-gw-api-key)"
+          base_url: https://openai.prod.ai-gateway.quantumblack.com/4cdf3203-85df-4e08-ab09-d02ce99ad96f/v1
+          temperature: 0.2
+          parallel_tool_calls: false
+      - name: bedrock:claude-3-5-sonnet
+        model_client: autogen_ext.models.anthropic.AnthropicBedrockChatCompletionClient
+        configuration:
+          model: anthropic.claude-3-5-sonnet-20240620-v1:0
+          temperature: 0.1
+          model_info:
+            vision: false
+            function_calling: true
+            json_output: false
+            structured_output: true
+            multiple_system_messages: false
+            family: claude-3-5-sonnet
+          bedrock_info:  
+            aws_region: us-east-1
+            aws_access_key: "$(AWS_ACCESS_KEY_ID)"
+            aws_secret_key: "$(AWS_SECRET_ACCESS_KEY)"
+            aws_session_token: "$(AWS_SESSION_TOKEN)"

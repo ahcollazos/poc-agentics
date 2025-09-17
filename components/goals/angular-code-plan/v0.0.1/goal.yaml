@@ -1,0 +1,73 @@
+goal:
+  description: ''
+  display_name: Angular Code Plan
+  id: 9e8b8079-99ac-4d9b-a1b1-1e3bd333dc50
+  name: angular-code-plan
+  objective: |-
+    **CONTEXT:**
+
+    ## Product Requirement Document
+
+    ```markdown
+    {{prd_content}}
+    ```
+
+    ## Figma Design Specifications
+
+    ```markdown
+    {{figma_design_specifications}}
+    ```
+
+    ## UI Design Spec
+
+    ```markdown
+    {{ui_design_spec_content}}
+    ```
+
+    ## Definition of Ready
+
+    ```markdown
+    {{definition_of_ready_content}}
+    ```
+
+    ## User story
+    ```markdown
+    {{user_story}}
+    ```
+
+    ## Output path
+    ```markdown
+    {{output_path}}
+    ```
+
+    ---
+
+    Your objective is to exhaustively analyze the provided documentation and generate Angular code implementation including all the requirements needed to implement the user journey and save the code plan to the output path using the `save_file` tool.
+
+    **IMPORTANT:**
+
+    - Save all the generated files to the output path: 2-angular-code-plan/output/angular-code-plan.md
+
+    - The Angular code implementation plan should be formatted in markdown format and structured for clarity.
+
+    *Inputs:*
+    - `prd_content`: The content of the Product Requirements Document.
+    - `figma_design_specifications`: The content of the Figma design specifications document.
+    - `ui_design_spec_content`: The content of the UI design specification document.
+    - `definition_of_ready_content`: The content of the Definition of Ready document.
+    - `user_story`: The path where the user story is located
+    - `output_path`: The path to the application where the new user story should be placed.
+
+    Your plan should include:
+    - Development Plan: What will be developed and how.
+    - Data Objects: Define the data objects to be created in Angular, including their purpose and relationships.
+    - File structure: How the codebase must be organized, following best practices.
+
+    *Acceptance Criteria:*
+    - The generated Angular code implementation plan must be placed in the correct directory within the application.
+    - The Angular code implementation plan must strictly adhere to all provided Figma design specifications.
+    - The Angular code implementation plan must comprehensively implement all requirements outlined in the PRD, with no omissions.
+    - The Angular code implementation plan must adhere to the provided user story
+  startpoint: |
+    Start by having the 'planner' come up with a plan to analyze the provided documents and generate the angular code implementation plan.
+  version: v0.0.1

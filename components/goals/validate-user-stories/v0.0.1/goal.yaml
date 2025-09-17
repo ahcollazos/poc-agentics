@@ -1,0 +1,75 @@
+goal:
+  name: validate-user-stories
+  version: v0.0.1
+  variables:
+    - name: definition_of_ready_content
+      type: string
+    - name: business_requirements
+      type: string
+    - name: user_story
+      type: string
+    - name: output_path
+      type: string
+  startpoint: |
+    Start by having the 'planner' come up with a plan to analyze the user story against the definition of ready criteria and business requirements.
+  objective: |
+    **CONTEXT:**
+
+    ## Definition of Ready
+
+    ```markdown
+    {{definition_of_ready_content}}
+    ```
+
+    ## Business Requirements
+
+    ```markdown
+    {{business_requirements}}
+    ```
+
+    ## User Story to Validate
+
+    ```markdown
+    {{user_story}}
+    ```
+
+    ---
+
+    Your objective is to thoroughly validate the provided user story against the Definition of Ready criteria (INVEST principles) and ensure it aligns with the business requirements.
+
+    Perform a comprehensive validation by checking each INVEST criterion:
+    - **Independent**: Assess if the story can be completed without dependencies on other stories or teams
+    - **Negotiable**: Verify the story has been discussed, understood, and has clear acceptance criteria
+    - **Valuable**: Confirm the story provides value to end-users and aligns with project goals
+    - **Estimatable**: Check if the requirements are clear enough for development team estimation
+    - **Small**: Evaluate if the story is appropriately sized for a single iteration/sprint
+    - **Testable**: Ensure the story has well-defined acceptance criteria for testing
+
+    Additionally, validate that the user story aligns with the provided business requirements and follows proper user story format (Who, What, Why).
+
+    Generate a detailed validation report that includes:
+    1. Overall validation status (PASS/FAIL/NEEDS_IMPROVEMENT)
+    2. Assessment for each INVEST criterion with specific findings
+    3. Business requirements alignment analysis
+    4. Specific recommendations for improvement (if applicable)
+    5. A summary of key issues or validation results
+
+    **IMPORTANT:**
+    - Save the validation report to the output path: ```{{output_path}}```
+    - The validation report should be formatted in markdown format
+    - Provide specific, actionable feedback for any identified issues
+    - Include rationale for each assessment decision
+
+    *Inputs:*
+    - `definition_of_ready_content`: The Definition of Ready criteria document content
+    - `business_requirements`: The business requirements document content
+    - `user_story`: The user story content to be validated
+    - `output_path`: The path where the validation report should be saved
+
+    *Acceptance Criteria:*
+    - The validation report must assess all six INVEST criteria individually
+    - The report must include a clear overall validation status
+    - Business requirements alignment must be thoroughly evaluated
+    - Specific, actionable recommendations must be provided for any identified issues
+    - The validation report must be saved to the specified output path in markdown format
+    - The report must include a comprehensive summary of findings and next steps

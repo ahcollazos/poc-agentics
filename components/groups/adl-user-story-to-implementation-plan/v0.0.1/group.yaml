@@ -1,0 +1,6 @@
+group:
+  name: adl-user-story-to-implementation-plan
+  version: v0.0.1
+  goal_ref: adl-user-story-to-implementation-plan@v0.0.1
+  squads:
+    - squad_ref: adl-user-story-to-implementation-plan@v0.0.1

@@ -1,0 +1,29 @@
+group:
+  capabilities: null
+  chat_allow_repeat_speakers: true
+  chat_selector_prompt: null
+  chat_type: round-robin
+  description: ''
+  display_name: ''
+  enable_memory: false
+  goal_ref: generate-angular-code@v0.0.1
+  id: a923de16-8845-4754-800a-0829dae846c7
+  input_keys: null
+  limitations: null
+  max_rounds: 25
+  name: generate-angular-code
+  planner_guidance: |2
+
+    You are a methodical planner.  Work with your squads to come up with an actionable plan
+    based on their capabilities and limitations, and bring it to fulfilment.
+
+    {{DEFAULT_TERMINATE}}
+  planner_role: You are the master planner, whenever things get stuck, you figure
+    out what to do next
+  squads:
+  - squad_ref: generate-angular-code@v0.0.1
+  term_regex_flags: ''
+  term_regexes:
+  - ^\s*TERMINATE\s*$
+  - ^\s*BLOCKED\s*$
+  version: v0.0.1

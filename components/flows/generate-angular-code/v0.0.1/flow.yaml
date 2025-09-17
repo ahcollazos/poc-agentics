@@ -1,0 +1,18 @@
+flow:
+  description: ''
+  display_name: ''
+  id: 8dd0b52b-c46d-4443-8467-293eca651ea8
+  name: generate-angular-code
+  post_stages: []
+  pre_stages: []
+  stages:
+  - description: Generate Angular code based on an implementation plan .md file
+    iterator: iterator
+    iterator_parallelism: 1
+    name: generate-angular-code
+    output_values: []
+    target_name: generate-angular-code
+    target_type: group
+    target_version: v0.0.1
+  variables: null
+  version: v0.0.1

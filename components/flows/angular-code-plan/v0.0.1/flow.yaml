@@ -1,0 +1,95 @@
+flow:
+  id: 6496cf36-1963-48c0-ab39-5262287814c2
+  name: angular-code-plan
+  stages:
+  - name: read_ui_design_spec
+    input_values:
+    - file_path: /source_code_files/1-context-engineering/input/ui-design-specs.md
+    - destination: ui_design_spec_content
+    target_name: get_file_content
+    target_type: transformer
+    target_version: v0.0.1
+  - name: read_prd_document
+    input_values:
+    - file_path: /source_code_files/1-context-engineering/input/prd.md
+    - destination: prd_content
+    target_name: get_file_content
+    target_type: transformer
+    target_version: v0.0.1
+  - name: read_definition_of_ready_document
+    input_values:
+    - file_path: /source_code_files/1-context-engineering/input/definition-of-ready.md
+    - destination: definition_of_ready_content
+    target_name: get_file_content
+    target_type: transformer
+    target_version: v0.0.1
+  - name: analyze_figma_design
+    target_type: transformer
+    target_name: analyze_image
+    target_version: v0.0.1
+    input_values:
+      - image_path_var_name: figma_design_image_path
+      - system_prompt: You are a helpful autonomous agent that analyzes Figma layout prototypes and provides a detailed specification of the features and UI patterns present in the layout
+      - user_prompt: |-
+          Analyze the image attached and provide a list of components that should be used to implement that figma prototype
+      - response_var_name: figma_design_specifications
+      - llm_config: azure:gpt-4o
+  - name: escape_angular_template_for_figma_design_specifications
+    target_type: transformer
+    target_name: escape_angular_template
+    target_version: v0.0.1
+    input_values:
+      - input_ref: figma_design_specifications
+      - output_ref: figma_design_specifications
+  - name: escape_angular_template_for_guidelines
+    input_values:
+    - input_ref: angular_guidelines_content
+    - output_ref: angular_guidelines_content
+    target_name: escape_angular_template
+    target_type: transformer
+    target_version: v0.0.1
+  - name: escape_angular_template_for_prd
+    input_values:
+    - input_ref: prd_content
+    - output_ref: prd_content
+    target_name: escape_angular_template
+    target_type: transformer
+    target_version: v0.0.1
+  - name: escape_angular_template_for_ui_specs
+    input_values:
+    - input_ref: ui_design_spec_content
+    - output_ref: ui_design_spec_content
+    target_name: escape_angular_template
+    target_type: transformer
+    target_version: v0.0.1
+  - name: escape_angular_template_for_definition_of_ready
+    input_values:
+    - input_ref: definition_of_ready_content
+    - output_ref: definition_of_ready_content
+    target_name: escape_angular_template
+    target_type: transformer
+    target_version: v0.0.1
+  - comment: Read the user story content from the specified file path
+    input_values:
+    - file_path_ref: user_story_path
+    - destination: user_story
+    name: read_user_story
+    target_name: get_file_content
+    target_type: transformer
+    target_version: v0.0.1
+  - name: angular-code-plan
+    input_values:
+    - figma_design_specifications
+    - prd_content
+    - ui_design_spec_content
+    - definition_of_ready_content
+    - user_story
+    target_name: angular-code-plan
+    target_type: group
+    target_version: v0.0.1
+  variables:
+  - name: figma_design_image_path
+    type: file
+  - name: user_story_path
+    type: file
+  version: v0.0.1
