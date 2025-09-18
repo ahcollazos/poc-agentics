@@ -1,10 +1,14 @@
 # Guía para construir un flow
 
 Esta guía describe el proceso completo para crear un nuevo *flow* dentro del repositorio, desde la ideación hasta la validación. Un flow es la pieza que orquesta transformadores y grupos de agentes para preparar contexto, activar metas y devolver artefactos finales.
+> Consulta también las guías específicas en `docs/components/` para profundizar en cada artefacto: [manifest](docs/components/manifest.md), [files](docs/components/files.md), [goals](docs/components/goals.md), [flows](docs/components/flows.md), [groups](docs/components/groups.md) y [squads](docs/components/squads.md).
+
 
 ## 1. Comprende el ecosistema
 
 Antes de empezar confirma cómo se relacionan los componentes:
+
+Para una visión más detallada de cada componente revisa las guías en `docs/components`: [flows](docs/components/flows.md), [goals](docs/components/goals.md), [groups](docs/components/groups.md), [squads](docs/components/squads.md) y [files](docs/components/files.md).
 
 - Un **flow** reúne entradas y define las etapas secuenciales a ejecutar.
 - Cada flow delega el objetivo principal en un **group**, el cual enlaza una meta (`goal`) y uno o varios escuadrones (`squads`). 【F:components/groups/figma-to-user-story/v0.0.1/group.yaml†L1-L6】
@@ -21,6 +25,8 @@ Documentar esta intención facilita diseñar la secuencia de etapas y detectar a
 
 ## 3. Prepara entradas y variables
 
+> Amplía los detalles sobre archivos compartidos en [docs/components/files.md](docs/components/files.md).
+
 - Si necesitas nuevos archivos, agrégalos a `components/files/<carpeta>` y actualiza `control.json` para que estén disponibles en `/source_code_files/...`.
 - Define qué valores dinámicos recibirá el flow cuando se ejecute (por ejemplo, rutas de imagen o ubicaciones de salida). Cada valor será una variable del flow con un tipo (`file`, `string`, etc.). En `figma-to-user-story` se declaran tanto la ruta de la imagen Figma como la carpeta donde guardar la historia. 【F:components/flows/figma-to-user-story/v0.0.1/flow.yaml†L4-L8】
 
@@ -31,6 +37,8 @@ Documentar esta intención facilita diseñar la secuencia de etapas y detectar a
 3. Dentro de esa carpeta crea `flow.yaml`. El repositorio sigue un esquema de versionado por carpeta, por lo que futuros cambios convivirán en carpetas adicionales (`v0.0.2`, `v1.0.0`, ...).
 
 ## 5. Redacta el `flow.yaml`
+
+> La estructura completa del `flow.yaml` está documentada en [docs/components/flows.md](docs/components/flows.md).
 
 ### 5.1 Encabezado obligatorio
 
@@ -69,6 +77,8 @@ Añade una etapa con `target_type: group` que pase al grupo toda la información
 - `pre_stages`, `post_stages` y `output_values` están disponibles si requieres preparar o limpiar resultados alrededor de la lista principal de stages. 【F:components/flows/generate-angular-code/v0.0.1/flow.yaml†L6-L16】
 
 ## 6. Verifica la alineación con goal y squad
+
+Para profundizar en cómo diseñar metas, grupos y escuadrones revisa [goals](docs/components/goals.md), [groups](docs/components/groups.md) y [squads](docs/components/squads.md).
 
 - Confirma que el grupo referenciado por el flow expone el goal correcto y que el goal espera exactamente las variables que estás enviando (nombres y tipos deben coincidir). 【F:components/flows/figma-to-user-story/v0.0.1/flow.yaml†L81-L86】【F:components/goals/figma-to-user-story/v0.0.1/goal.yaml†L4-L59】
 - Revisa que el squad asociado cuente con los roles y herramientas necesarios para cumplir el objetivo. Ajusta sus instrucciones si introduces nuevos formatos de entrega.
